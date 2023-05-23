@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget {
-
-
   AnimationController animationController;
   Animation colorsTween, homeTween, yogaTween, iconTween, drawerTween;
   Function()? onPressed;
 
-  CustomAppBar({
+  CustomAppBar({super.key,
     required this.animationController,
-  required this.colorsTween,
-  required this.drawerTween,
-  required this.homeTween,
-  required this.iconTween,
-  required this.onPressed,
-  required this.yogaTween
-
+    required this.colorsTween,
+    required this.drawerTween,
+    required this.homeTween,
+    required this.iconTween,
+    required this.onPressed,
+    required this.yogaTween
 });
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return  SizedBox(
       height: 100,
       child: AnimatedBuilder(
         animation: animationController,
@@ -50,8 +48,8 @@ class CustomAppBar extends StatelessWidget {
           ),
           actions: [
             Icon(Icons.notifications, color: iconTween.value,),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
               child: CircleAvatar(
                 backgroundColor: Colors.black,
               ),
