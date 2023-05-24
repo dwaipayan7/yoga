@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'CustomAppBar.dart';
+import 'package:yoga/Widgets/CustomDrawer.dart';
+import '../Widgets/CustomAppBar.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -44,7 +45,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      drawer: Drawer(),
+      drawer: const CustomDrawer(),
       backgroundColor: Colors.white,
       body: NotificationListener(
         onNotification: scrollListner,
