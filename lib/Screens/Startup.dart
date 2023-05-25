@@ -11,6 +11,15 @@ class _StartupState extends State<Startup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: ElevatedButton(onPressed: (){},child: Container(
+        color: Colors.blue,
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+        child: Text("START", style: TextStyle(
+          fontSize: 20,
+          color: Colors.white
+        ),),
+      ),),
       body: CustomScrollView(
         slivers: [
 
@@ -19,7 +28,6 @@ class _StartupState extends State<Startup> {
             expandedHeight: 300,
             pinned: true,
             // backgroundColor: Colors.red,
-
 
             flexibleSpace: FlexibleSpaceBar(
               collapseMode: CollapseMode.parallax,
@@ -34,32 +42,28 @@ class _StartupState extends State<Startup> {
               IconButton(onPressed: (){}, icon: Icon(Icons.thumb_up_alt_rounded))
             ],
           ),
-          SliverToBoxAdapter(
-            child:   Column(
+      SliverToBoxAdapter(
+
+          child: Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
               children: [
-                Container(
-                  height: 200,
-                  color: Colors.blue,
+                Row(
+                  children: [
+                    Text("16 Mins || 26 Workouts" , style: TextStyle(fontWeight: FontWeight.w400),)
+                  ],
                 ),
-                Container(
-                  height: 200,
-                  color: Colors.blue,
-                ),
-                Container(
-                  height: 200,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: 200,
-                  color: Colors.green,
-                ),
-                Container(
-                  height: 200,
-                  color: Colors.red,
-                )
+                const Divider(thickness: 2,),
+                ListView.separated(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    separatorBuilder: (context, index)=>Divider(thickness: 2,),itemBuilder: (context, index)=>
+                    ListTile(leading: Container(margin: EdgeInsets.only(right: 20),
+                        child: Image.network("https://i.pinimg.com/originals/02/28/74/0228749d03812fc95700955e1a05d42e.gif" ,fit: BoxFit.cover,)),title: Text("Yoga $index" , style: TextStyle(fontWeight: FontWeight.bold ,fontSize: 18),), subtitle: Text((index%2 == 0) ?"00:20" : "x20" , style: TextStyle(fontSize: 15),),) , itemCount: 10)
               ],
             ),
-          )
+          ),
+        )
 
         ],
       ),
