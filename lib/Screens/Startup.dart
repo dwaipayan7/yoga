@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yoga/Screens/rUready.dart';
 
 class Startup extends StatefulWidget {
   const Startup({Key? key}) : super(key: key);
@@ -12,10 +13,12 @@ class _StartupState extends State<Startup> {
   Widget build(BuildContext context) {
     return Scaffold(
       // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: ElevatedButton(onPressed: (){},child: Container(
+      floatingActionButton: ElevatedButton(onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder:(context)=> rUready()));
+      },child: Container(
         color: Colors.blue,
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-        child: Text("START", style: TextStyle(
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+        child: const Text("START", style: TextStyle(
           fontSize: 20,
           color: Colors.white
         ),),
@@ -31,7 +34,7 @@ class _StartupState extends State<Startup> {
 
             flexibleSpace: FlexibleSpaceBar(
               collapseMode: CollapseMode.parallax,
-              title: Text("Yoga For Beginner", style: TextStyle(
+              title: const Text("Yoga For Beginner", style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20
               ),),
@@ -39,16 +42,16 @@ class _StartupState extends State<Startup> {
             ),
 
             actions: [
-              IconButton(onPressed: (){}, icon: Icon(Icons.thumb_up_alt_rounded))
+              IconButton(onPressed: (){}, icon: const Icon(Icons.thumb_up_alt_rounded))
             ],
           ),
       SliverToBoxAdapter(
 
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               children: [
-                Row(
+                const Row(
                   children: [
                     Text("16 Mins || 26 Workouts" , style: TextStyle(fontWeight: FontWeight.w400),)
                   ],
@@ -56,9 +59,9 @@ class _StartupState extends State<Startup> {
                 const Divider(thickness: 2,),
                 ListView.separated(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    separatorBuilder: (context, index)=>Divider(thickness: 2,),itemBuilder: (context, index)=>
-                    ListTile(leading: Container(margin: EdgeInsets.only(right: 20),
+                    physics: const NeverScrollableScrollPhysics(),
+                    separatorBuilder: (context, index)=>const Divider(thickness: 2,),itemBuilder: (context, index)=>
+                    ListTile(leading: Container(margin: const EdgeInsets.only(right: 20),
                         child: Image.network("https://i.pinimg.com/originals/02/28/74/0228749d03812fc95700955e1a05d42e.gif" ,fit: BoxFit.cover,)),title: Text("Yoga $index" , style: TextStyle(fontWeight: FontWeight.bold ,fontSize: 18),), subtitle: Text((index%2 == 0) ?"00:20" : "x20" , style: TextStyle(fontSize: 15),),) , itemCount: 10)
               ],
             ),
