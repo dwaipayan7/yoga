@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:yoga/Screens/Break.dart';
 
 class WorkOutDet extends StatelessWidget {
   const WorkOutDet({Key? key}) : super(key: key);
@@ -120,7 +121,7 @@ class TimerModelSec with ChangeNotifier {
       if(countdown == 0){
         timer.cancel();
         // Navigator.push(context, route)
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> WorkOutDet()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> Break()));
       }
     });
   }
