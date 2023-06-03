@@ -3,8 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Break extends StatelessWidget {
-  const Break({Key? key}) : super(key: key);
+class BreakTime extends StatelessWidget {
+  const BreakTime({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<TimerModelSec>
@@ -77,9 +78,9 @@ class TimerModelSec with ChangeNotifier{
       notifyListeners();
       if(countdown == 0){
         timer.cancel();
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>Break()
-        )
-        );
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>BreakTime(
+
+        )));
       }
     });
   }
