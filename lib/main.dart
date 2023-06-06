@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yoga/Screens/Finish.dart';
 import 'package:yoga/Screens/Home.dart';
 import 'package:yoga/Screens/Break.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  Home(),
+      home:  Finish(),
 
 
     );
