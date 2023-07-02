@@ -34,10 +34,9 @@ class YogaDatabase{
    ${YogaModel.IDName} $idType,
    ${YogaModel.YogaName} $textType,
    ${YogaModel.ImageName} $textType,
-    ${YogaModel.SecondsOrNot} $boolType,
-   ${YogaModel.SecondsOrTimes} $textType,
+   ${YogaModel.SecondsOrNot} $boolType
    )''');
-    // ${YogaModel.SecondsOrNot} $boolType,
+
 
 
     await db.execute('''
@@ -45,8 +44,7 @@ class YogaDatabase{
    ${YogaModel.IDName} $idType,
    ${YogaModel.YogaName} $textType,
    ${YogaModel.ImageName} $textType,
-   ${YogaModel.SecondsOrNot} $boolType,
-   ${YogaModel.SecondsOrTimes} $textType,
+   ${YogaModel.SecondsOrNot} $boolType
    )''');
 
 
@@ -56,8 +54,7 @@ class YogaDatabase{
    ${YogaModel.IDName} $idType,
    ${YogaModel.YogaName} $textType,
    ${YogaModel.ImageName} $textType,
-   ${YogaModel.SecondsOrNot} $boolType,
-   ${YogaModel.SecondsOrTimes} $textType,
+   ${YogaModel.SecondsOrNot} $boolType
    )''');
 
 
