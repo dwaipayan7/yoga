@@ -25,6 +25,18 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     await YogaDatabase.instance.InsertYogaSum(yogaSummary);
   }
 
+  bool isLoading = true;
+
+  late List<YogaSummary> yogasumlst;
+
+  Future readYogaSumEntry() async{
+    this.yogasumlst = await YogaDatabase.instance.readAllYogaSum();
+    isLoading = false;
+
+      print(yogasumlst[0].YogaWorkOutName.toString());
+
+  }
+
 
   @override
   void initState() {
@@ -46,12 +58,17 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
 
 
     // CREATING ONE YOGA WORKOUT PACK
-
-    makeYogaSumEntry(YogaSummary(YogaWorkOutName: YogaModel.YogaTable1, BackImg: "BackImage", TimeTaken: "30", TotalNoOfWork: "12"), YogaModel.YogaTable1);
-    makeYogaEntry(Yoga(Seconds: true, YogaImgUrl: "DUMMYURL", YogaTitle: "Anulom Vilom", SecondsOrTimes: '30'), YogaModel.YogaTable1);
-    makeYogaEntry(Yoga(Seconds: true, YogaImgUrl: "DUMMYURL1", YogaTitle: "Kapalbhati", SecondsOrTimes: '15'), YogaModel.YogaTable1);
-    makeYogaEntry(Yoga(Seconds: true, YogaImgUrl: "DUMMYURL2", YogaTitle: "Pranam", SecondsOrTimes: '12'), YogaModel.YogaTable1);
-    makeYogaEntry(Yoga(Seconds: true, YogaImgUrl: "DUMMYURL3", YogaTitle: "Shwasari", SecondsOrTimes: '16'), YogaModel.YogaTable1);
+    //
+    // makeYogaSumEntry(YogaSummary(YogaWorkOutName: YogaModel.YogaTable1, BackImg: "BackImage", TimeTaken: "30", TotalNoOfWork: "12"), YogaModel.YogaTable1);
+    // makeYogaEntry(Yoga(Seconds: true, YogaImgUrl: "DUMMYURL", YogaTitle: "Anulom Vilom", SecondsOrTimes: '30'), YogaModel.YogaTable1);
+    // makeYogaEntry(Yoga(Seconds: true, YogaImgUrl: "DUMMYURL1", YogaTitle: "Kapalbhati", SecondsOrTimes: '15'), YogaModel.YogaTable1);
+    // makeYogaEntry(Yoga(Seconds: true, YogaImgUrl: "DUMMYURL2", YogaTitle: "Pranam", SecondsOrTimes: '12'), YogaModel.YogaTable1);
+    // makeYogaEntry(Yoga(Seconds: true, YogaImgUrl: "DUMMYURL3", YogaTitle: "Shwasari", SecondsOrTimes: '16'), YogaModel.YogaTable1);
+    //
+    
+    readYogaSumEntry();
+    // print(yogasumlst.toString());
+    
   }
 
   bool scrollListner(ScrollNotification scrollNotification) {
