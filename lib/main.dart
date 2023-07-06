@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:yoga/Screens/Finish.dart';
 import 'package:yoga/Screens/Home.dart';
 import 'package:yoga/Screens/Break.dart';
-
 import 'Screens/Startup.dart';
 
 void main() {
